@@ -63,6 +63,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.ogr2ogr.ogr2ogr">
+            function <span class="apidocSignatureSpan"></span>ogr2ogr
+            <span class="apidocSignatureSpan">(mixed, fmt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ogr2ogr.</span>csv</span>
 
         </li>
@@ -223,6 +232,46 @@
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.ogr2ogr" id="apidoc.module.ogr2ogr">module ogr2ogr</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ogr2ogr.ogr2ogr" id="apidoc.element.ogr2ogr.ogr2ogr">
+        function <span class="apidocSignatureSpan"></span>ogr2ogr
+        <span class="apidocSignatureSpan">(mixed, fmt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Ogr2ogr(mixed, fmt) {
+  if (!(this instanceof Ogr2ogr)) return new Ogr2ogr(mixed, fmt)
+
+  if (!mixed) {
+    throw new Error(&#x27;A file path, stream, or GeoJSON object is required&#x27;)
+  }
+
+  if (mixed instanceof stream) {
+    var driver = util.getDriver(fmt || path.extname(mixed.path).replace(&#x27;.&#x27;,&#x27;&#x27;))
+    if (!driver) throw new Error(&#x27;Streams require a valid input format&#x27;)
+    this._inStream = mixed
+    this._inDriver = driver
+  }
+  else if (typeof mixed == &#x27;object&#x27;) {
+    this._inGeoJSON = mixed
+  }
+  else {
+    this._inPath = mixed
+  }
+
+  this._driver = {}
+  this._args = []
+  this._timeout = 15000
+  this._format = &#x27;GeoJSON&#x27;
+  this._skipfailures = false
+
+  this._testClean = function() {} // testing
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
 
