@@ -1,6 +1,6 @@
 # npmdoc-ogr2ogr
 
-#### api documentation for  [ogr2ogr (v1.0.1)](http://github.com/wavded/ogr2ogr)  [![npm package](https://img.shields.io/npm/v/npmdoc-ogr2ogr.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-ogr2ogr) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-ogr2ogr.svg)](https://travis-ci.org/npmdoc/node-npmdoc-ogr2ogr)
+#### basic api documentation for  [ogr2ogr (v1.0.1)](http://github.com/wavded/ogr2ogr)  [![npm package](https://img.shields.io/npm/v/npmdoc-ogr2ogr.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-ogr2ogr) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-ogr2ogr.svg)](https://travis-ci.org/npmdoc/node-npmdoc-ogr2ogr)
 
 #### ogr2ogr wrapper w/ multiple format support
 
@@ -73,7 +73,8 @@
         "docker-test": "docker run -t -v 'pwd':/src -w /src wavded/ogre npm test",
         "test": "istanbul cover tape \"test/*-test.js\""
     },
-    "version": "1.0.1"
+    "version": "1.0.1",
+    "bin": {}
 }
 ```
 
